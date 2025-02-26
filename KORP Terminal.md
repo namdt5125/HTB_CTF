@@ -16,6 +16,22 @@ Tôi thử recon hết công suất, vừa fuzz, vừa brute, vừa sqlmap:
 
 ![image](https://github.com/user-attachments/assets/db087f00-b456-477c-89c6-e9137379fa2b)
 
+Sau 1 lúc thì, ngon, dính sql rồi `sqlmap -r req.txt --batch --level=5 --risk=3 --dump --ignore-code=401` :
 
+![image](https://github.com/user-attachments/assets/994ca5d1-f4d1-4b08-8f44-480d637f4df8)
+
+![image](https://github.com/user-attachments/assets/cf8d25ed-15b1-4c65-be27-c56f581fa444)
+
+![image](https://github.com/user-attachments/assets/32410a4a-c9ff-442c-b1e0-a1c8eb8b5809)
+
+Tôi bị đần, đi vác cái hash ném vào password 
+
+![image](https://github.com/user-attachments/assets/3336014a-ae47-4112-9313-9b25b34e37ea)
+
+Dùng `hashcat.exe -m 3200 ./target/target.txt ./target/rockyou.txt` là ra:
+
+![image](https://github.com/user-attachments/assets/ff6a3647-4fe2-48dd-8f84-6ed548171775)
+
+password123
 
 
