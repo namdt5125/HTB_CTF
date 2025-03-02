@@ -26,15 +26,34 @@ Việc giả mạo cookie cũng khó vì nó hash random bằng sha256:
 
 ![image](https://github.com/user-attachments/assets/da4fced0-3430-4075-ab93-f09d0f2c8816)
 
-Sau 1 lúc đọc src code và test thì tôi nhận ra 1 cái khá đặc biệt:
+Sau 1 lúc đọc cái src của document và test thì tôi nhận ra là khi ném cái base64 thông tin của uusername vào trong document, nó sẽ cho cái Signature chính là hash nằm trong cookie:
 
-![image](https://github.com/user-attachments/assets/f1a0484f-c943-49a2-8773-aa923218e5e3)
+![image](https://github.com/user-attachments/assets/e217f137-166d-4b28-a074-ab525c77c1b1)
+ 
+![image](https://github.com/user-attachments/assets/4fadc1d4-3da3-4c21-a4ac-a323766b316c)
 
-![image](https://github.com/user-attachments/assets/e90c7b23-9666-4289-88bf-78d115a9944a)
+Vậy là có thể mạo danh với mọi user tồn tại, vào cái chỗ để lấy flag:
 
-![image](https://github.com/user-attachments/assets/6672317e-8c2d-4d5a-a3d5-0136d274f58e)
+![image](https://github.com/user-attachments/assets/8da7537f-87d2-41a1-953c-b3c04283ad48)
 
-Cụ thể là nếu username mà không tồn tại thì trang sẽ chuyển hướng đến 1 nơi khác, còn tồn tại thì sẽ hiện ngay invalid ở trong web, nó làm tôi nghĩ đến việc brute force username và password:
+Lần này thì lại liên quan đến ACCESS_PASS:
+
+![image](https://github.com/user-attachments/assets/3b560f9e-3e9f-4cf4-950d-baf3008d3ee6)
+
+![image](https://github.com/user-attachments/assets/298ac945-70fc-4df4-8c49-e8a41f785e69)
+
+![image](https://github.com/user-attachments/assets/e01220d4-a741-4521-bde5-4df24696504e)
+
+Tôi đã cố thử brute nhưng không ra 
+
+![image](https://github.com/user-attachments/assets/7dd79479-2967-4ae3-80be-324cf219995c)
+
+
+
+
+
+
+
 
 
 
