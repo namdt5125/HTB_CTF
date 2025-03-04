@@ -48,8 +48,7 @@ Tôi đã cố thử brute nhưng không ra
 
 ![image](https://github.com/user-attachments/assets/7dd79479-2967-4ae3-80be-324cf219995c)
 
-
-
+Do tôi không đọc kĩ code, mỗi khi gõ sai là cái rotatePass là đổi luôn cái access_pass, còn 1 cách nữa là để 1 số ví dụ như 4567 rồi brute full các số, khoảng 20000 lần thì vẫn có xác suất ra
 
 
 
